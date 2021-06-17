@@ -9,7 +9,7 @@ import LandingPage from "../Pages/Landing/LandingPage";
 
 function RootRouting(props) {
   return (
-    <Router>
+    <Router basename="/acm_git/">
       {/* <Suspense fallback={<Loading />}> */}
       <Switch>
         <Route path="/" component={LandingPage} />
