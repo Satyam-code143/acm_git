@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Grid, Typography, Paper } from "@material-ui/core";
 import { motion } from "framer-motion";
 import Aos from "aos";
@@ -8,6 +8,19 @@ import Students from "../../assets/images/students.jpg";
 function UpcomingEvents({ data }) {
   const styles = useStyles();
   const [showFlag, setShowflag] = useState({ id: "", flag: false });
+  const myRef = useRef();
+
+  const handleClickOutside = (e) => {
+    if (!myRef.current.contains(e.target)) {
+      setShowflag({ ...showFlag, id: "", flag: false });
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  });
+
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
@@ -42,7 +55,9 @@ function UpcomingEvents({ data }) {
               : (color = { background: "#007A53" });
           }
           const onClickStyle =
-            showFlag.flag && showFlag.id === id ? (color.height = 280) : null;
+            showFlag.flag === true && showFlag.id === id
+              ? (color.height = 280)
+              : (color.height = 35);
           return (
             <Grid
               key={id}
@@ -69,6 +84,7 @@ function UpcomingEvents({ data }) {
                     component={motion.div}
                   >
                     <Paper
+                      ref={myRef}
                       className={styles.innerButton}
                       style={color}
                       square

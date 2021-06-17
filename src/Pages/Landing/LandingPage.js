@@ -6,7 +6,6 @@ import Carsousel from "./Carsousel";
 import OaverlayLeft from "./OaverlayLeft";
 import OverlayRight from "./OverlayRight";
 import { useStyles } from "./landingStyles";
-import { motion } from "framer-motion";
 import UpcomingEvents from "../CommonComponents/UpcomingEvents";
 
 const UpEvents = [
