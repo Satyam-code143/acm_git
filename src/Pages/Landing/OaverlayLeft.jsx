@@ -9,7 +9,7 @@ function OaverlayLeft() {
 
   return (
     <div className={styles.infoPaperContainer}>
-      <div className={styles.infoPaper}>
+      <div className={styles.infoPaper1}>
         <div className={styles.imgContainer}>
           <img src={BlackLogo} className={styles.logoStyle} />
         </div>

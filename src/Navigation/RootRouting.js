@@ -12,7 +12,7 @@ function RootRouting(props) {
     <Router basename="/acm_git/">
       {/* <Suspense fallback={<Loading />}> */}
       <Switch>
-        <Route path="/" component={LandingPage} />
+        <Route exact path="/" component={LandingPage} />
       </Switch>
       {/* </Suspense> */}
     </Router>

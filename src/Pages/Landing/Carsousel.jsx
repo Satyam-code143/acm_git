@@ -16,6 +16,7 @@ function Carsousel() {
       showThumbs={false}
       showArrows={false}
       showIndicators={false}
+      transitionTime={2000}
     >
       <div className={styles.imgDivStyle}>
         <img alt="pic1" src={Students} className={styles.imgStyle} />

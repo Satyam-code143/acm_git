@@ -14,6 +14,10 @@ export const useStyles = makeStyles((theme) => ({
     height: 400,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
+    [theme.breakpoints.down("xs")]: {
+      width: 250,
+      height: 350,
+    },
   },
   imgComponent: {
     width: "100%",
@@ -26,6 +30,9 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
+    [theme.breakpoints.down("xs")]: {
+      height: 350,
+    },
   },
   innerButton: {
     width: "70%",

@@ -20,10 +20,9 @@ function UpcomingEvents({ data }) {
       direction="column"
       justify="center"
       alignItems="center"
-      data-aos="fade-up"
       style={{ marginTop: 80 }}
     >
-      <Typography variant="h4" className={styles.upTitle}>
+      <Typography variant="h4" className={styles.upTitle} data-aos="fade-up">
         Upcoming Events
       </Typography>
       <Grid
@@ -31,7 +30,6 @@ function UpcomingEvents({ data }) {
         justify="center"
         style={{
           justifyContent: "space-around",
-          marginTop: "15vh",
         }}
       >
         {data.map(({ id, image, title, descripition }, index) => {
@@ -43,8 +41,17 @@ function UpcomingEvents({ data }) {
               ? (color = { background: "#003F7D" })
               : (color = { background: "#007A53" });
           }
+          const onClickStyle =
+            showFlag.flag && showFlag.id === id ? (color.height = 280) : null;
           return (
-            <Grid key={id} item>
+            <Grid
+              key={id}
+              item
+              style={{
+                marginTop: "15vh",
+              }}
+              data-aos="fade-up"
+            >
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -68,11 +75,14 @@ function UpcomingEvents({ data }) {
                       component={motion.div}
                       whileHover={{ height: 300 }}
                       id={id}
-                      onHoverStart={(e, action) => {
+                      onHoverStart={() => {
                         setShowflag({ ...showFlag, id: id, flag: true });
                       }}
                       onHoverEnd={() => {
                         setShowflag({ ...showFlag, id: "", flag: false });
+                      }}
+                      onClick={() => {
+                        setShowflag({ ...showFlag, id: id, flag: true });
                       }}
                     >
                       <Typography

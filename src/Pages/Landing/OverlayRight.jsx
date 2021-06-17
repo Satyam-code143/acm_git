@@ -8,9 +8,14 @@ function OverlayRight() {
   const styles = useStyles();
   return (
     <div className={styles.infoPaperContainer}>
-      <div className={styles.infoPaper2}></div>
+      <div className={styles.infoPaper2}>
+        <div className={styles.infoContainer}></div>
+        <div className={styles.imgContainer2}>
+          <img src={BlackLogo} className={styles.logoStyle} />
+        </div>
+      </div>
       <div className={styles.dotGrid2}>
-        <img src={DottedGrid} alt="Dot Grid" className={styles.gridStyle} />
+        <img src={DottedGrid} alt="Dot Grid" className={styles.gridStyle2} />
       </div>
     </div>
   );

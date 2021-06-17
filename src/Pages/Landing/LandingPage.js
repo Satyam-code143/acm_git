@@ -39,7 +39,7 @@ function LandingPage() {
 
   return (
     <Grid container>
-      <Grid item container xs={0} sm={1} data-aos="fade-right">
+      <Grid item container xs={false} sm={1} data-aos="fade-right">
         <SideNav />
       </Grid>
       <Grid item container xs={12} sm={11} data-aos="fade-up">
@@ -51,13 +51,7 @@ function LandingPage() {
       <Grid container item xs={12} direction="row" data-aos="fade-up">
         <OverlayRight />
       </Grid>
-      <Grid
-        container
-        item
-        xs={12}
-        style={{ marginTop: 160 }}
-        data-aos="fade-up"
-      >
+      <Grid container item xs={12} data-aos="fade-up">
         <Grid container item xs={1}></Grid>
         <Grid container item xs={10}>
           <Paper elevation={12} className={styles.paperInfo}></Paper>
@@ -73,7 +67,7 @@ function LandingPage() {
         justify="center"
         alignItems="center"
         style={{
-          marginTop: 160,
+          marginTop: 80,
           background: "#003F7D",
           marginBottom: 160,
           paddingTop: 40,
