@@ -5,7 +5,7 @@ import Aos from "aos";
 import { useStyles } from "./commonStyles";
 import Students from "../../assets/images/students.jpg";
 
-function UpcomingEvents({ data }) {
+function UpcomingEvents({ data, title }) {
   const styles = useStyles();
   const [showFlag, setShowflag] = useState({ id: "", flag: false });
   const myRef = useRef();
@@ -36,13 +36,14 @@ function UpcomingEvents({ data }) {
       style={{ marginTop: 80 }}
     >
       <Typography variant="h4" className={styles.upTitle} data-aos="fade-up">
-        Upcoming Events
+        {title}
       </Typography>
       <Grid
         container
         justify="center"
         style={{
           justifyContent: "space-around",
+          width: "85%",
         }}
       >
         {data.map(({ id, image, title, descripition }, index) => {
@@ -54,10 +55,6 @@ function UpcomingEvents({ data }) {
               ? (color = { background: "#003F7D" })
               : (color = { background: "#007A53" });
           }
-          const onClickStyle =
-            showFlag.flag === true && showFlag.id === id
-              ? (color.height = 280)
-              : (color.height = 35);
           return (
             <Grid
               key={id}

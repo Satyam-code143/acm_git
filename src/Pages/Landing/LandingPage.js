@@ -8,6 +8,7 @@ import OverlayRight from "./OverlayRight";
 import { useStyles } from "./landingStyles";
 import UpcomingEvents from "../CommonComponents/UpcomingEvents";
 
+// Temp data
 const UpEvents = [
   {
     id: 0,
@@ -28,6 +29,7 @@ const UpEvents = [
     descripition: "Adipisicing occaecat qui non laborum consequat enim.",
   },
 ];
+// Temp data
 
 function LandingPage() {
   useEffect(() => {
@@ -57,7 +59,7 @@ function LandingPage() {
         </Grid>
         <Grid container item xs={1}></Grid>
       </Grid>
-      <UpcomingEvents data={UpEvents} />
+      <UpcomingEvents data={UpEvents} title="Upcoming Events" />
       <Grid
         container
         item
