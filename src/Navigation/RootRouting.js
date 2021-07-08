@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Events from "../Pages/Events/Events";
 import LandingPage from "../Pages/Landing/LandingPage";
+import Team from "../Pages/Team/Team";
 
 function RootRouting(props) {
   return (
@@ -14,7 +15,8 @@ function RootRouting(props) {
       {/* <Suspense fallback={<Loading />}> */}
       <Switch>
         {/* <Route exact path="/" component={LandingPage} /> */}
-        <Route exact path="/" component={Events} />
+        {/* <Route exact path="/" component={Events} /> */}
+        <Route exact path="/" component={Team} />
       </Switch>
       {/* </Suspense> */}
     </Router>
